@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Lista_compra</string>
+    <string name="app_name">Lista de compra</string>
+    <string name="BR_email">Email</string>
+    <string name="BR_senha">Senha</string>
+    <string name="BR_login">Entrar</string>
+    <string name="BR_cadastrar">Não tem uma conta? Cadastre-se</string>
 </resources>

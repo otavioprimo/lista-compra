@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    tools:context="codebrain.com.br.lista_compra.MainActivity">
+    tools:context="codebrain.com.br.lista_compra.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -78,13 +77,14 @@
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorWhite"
         android:layout_below="@+id/linearLayout2"
-        android:layout_alignRight="@+id/linearLayout"
-        android:layout_alignEnd="@+id/linearLayout"
         android:layout_alignLeft="@+id/linearLayout2"
-        android:layout_alignStart="@+id/linearLayout2" />
+        android:layout_alignStart="@+id/linearLayout2"
+        android:layout_marginTop="17dp"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/btnCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/BR_cadastrar"
