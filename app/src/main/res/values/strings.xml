@@ -4,4 +4,11 @@
     <string name="BR_senha">Senha</string>
     <string name="BR_login">Entrar</string>
     <string name="BR_cadastrar">Não tem uma conta? Cadastre-se</string>
+    <string name="BR_txtCadastro">CADASTRE-SE</string>
+    <string name="BR_btnCadastro">Cadastrar</string>
+    <string name="BR_value_isempty">Este campo deve ser preenchido</string>
+    <string name="BR_cadastrar_produto">Cadastrar Produto</string>
+    <string name="BR_descricao">Descrição</string>
+    <string name="BR_quantidade">Quantidade</string>
+    <string name="BR_btnSalvar">Salvar</string>
 </resources>
