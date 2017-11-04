@@ -34,15 +34,27 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <ListView
+    <Button
+        android:id="@+id/btnDeleteAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_below="@+id/txtEmail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp"
-        android:dividerHeight="15dp"
-        android:divider="@android:color/transparent"/>
+        android:layout_below="@+id/txtEmail"
+        android:text="Deletar Tudo"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="12dp"
+        android:backgroundTint="@color/colorDanger"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDeleteAll"
+        android:layout_marginTop="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="15dp" />
 
 </RelativeLayout>

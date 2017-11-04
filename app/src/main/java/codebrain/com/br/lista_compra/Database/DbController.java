@@ -47,7 +47,7 @@ public class DbController {
     public Boolean selectUserByEmail(String email){
         Cursor cursor = null;
         db = banco.getWritableDatabase();
-        cursor = db.rawQuery("SELECT _id FROM usuarios WHERE email=? LIMIT 1",new String[] {email + ""});
+        cursor = db.rawQuery("SELECT _id FROM usuarios WHERE email='?' LIMIT 1",new String[] {email + ""});
         try{
 
             if(cursor.getCount() > 0) {
@@ -119,5 +119,23 @@ public class DbController {
         }finally {
             db.close();
         }
+    }
+
+    public void deleteAllProdutos() {
+        SQLiteDatabase db = banco.getReadableDatabase();
+
+        db.delete(banco.TABELA_PRODUTO,null,null);
+
+        db.close();
+    }
+
+    public void deleteProduto(long id) {
+        SQLiteDatabase db = banco.getReadableDatabase();
+
+        String string = String.valueOf(id);
+        db.execSQL("DELETE FROM " + banco.TABELA_PRODUTO + " WHERE " + banco.ID_PRODUTO
+                + "=" + id + "");
+
+        db.close();
     }
 }

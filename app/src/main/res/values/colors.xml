@@ -6,4 +6,5 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorTxt">#878787</color>
+    <color name="colorDanger">#ff0000</color>
 </resources>

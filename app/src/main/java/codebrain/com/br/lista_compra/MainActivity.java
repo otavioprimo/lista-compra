@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtEmail;
     ImageView imgAdd;
     ListView listProdutos;
+    Button btnDeleteAll;
 
     private ListView lista;
 
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         imgAdd = (ImageView) findViewById(R.id.btnAdd);
         listProdutos = (ListView) findViewById(R.id.listView);
+        btnDeleteAll = (Button) findViewById(R.id.btnDeleteAll);
 
         Bundle extras = getIntent().getExtras();
         usuario_id = extras.getInt("usuario_id");
@@ -59,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, NovoProduto.class);
                 intent.putExtra("usuario_id", usuario_id);
                 startActivity(intent);
+            }
+        });
+
+        btnDeleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deletarTodosProdutos();
+            }
+        });
+
+        listProdutos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                DbController db = new DbController(getBaseContext());
+                db.deleteProduto(l);
+                carregarProdutos(usuario_id);
             }
         });
     }
@@ -76,5 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.activity_list_view, cursor, nomeCampos, idViews, 0);
 
         listProdutos.setAdapter(adaptador);
+    }
+
+    private void deletarTodosProdutos(){
+        DbController db = new DbController(getBaseContext());
+
+        db.deleteAllProdutos();
+        carregarProdutos(usuario_id);
     }
 }
