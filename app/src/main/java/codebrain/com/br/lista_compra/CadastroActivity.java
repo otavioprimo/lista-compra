@@ -65,7 +65,6 @@ public class CadastroActivity extends AppCompatActivity {
        if(!verificarEmail(user.getEmail())){
            DbController db = new DbController(getBaseContext());
            Boolean resultado = db.insertUsuario(user);
-
            return resultado;
        }else{
            return false;

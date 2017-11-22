@@ -47,7 +47,7 @@ public class DbController {
     public Boolean selectUserByEmail(String email){
         Cursor cursor = null;
         db = banco.getWritableDatabase();
-        cursor = db.rawQuery("SELECT _id FROM usuarios WHERE email='?' LIMIT 1",new String[] {email + ""});
+        cursor = db.rawQuery("SELECT _id FROM usuarios WHERE email=? LIMIT 1",new String[] {email + ""});
         try{
 
             if(cursor.getCount() > 0) {
